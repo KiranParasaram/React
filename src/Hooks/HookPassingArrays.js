@@ -1,26 +1,26 @@
 import React, { useState } from 'react'
 
 const HookPassingArrays = () => {
-    
-     const [items,setItems] =  useState( [] )
 
-     const click=()=>{
-         setItems( [...items,{ id: items.length , value: Math.floor(Math.random()*10) }] ) //we are trying to print like line:22
-     }
+  const [items, setItems] = useState([])
+
+  const click = () => {
+    setItems([...items, { id: items.length, value: Math.floor(Math.random() * 10) }]) //we are trying to print like line:20
+  }
 
   return (
     <div>
 
-        {
-            // items.map( (x) => <li key={x.id}> {x.id} {x.value} </li> )  //***Here KEY is used bcz without key whole li elemnts rerender and updates when click, but with key only the perticular elemnt is update and rerender by DOM***
-            //here in key we have to pass unique identity ,if we doesn't have unique idebtity like id then use INDEX 
-        }
-                                        
-        {
-             items.map( (x,index) => <li key={index}> {x.id} {x.value} </li> )  //like this
-        }
-                                    
-       <button onClick={click}>Add value</button>
+      {
+        // items.map( (x) => <li key={x.id}> {x.id} {x.value} </li> )  //***Here KEY is used bcz without key whole li elemnts rerender and updates when click, but with key only the perticular elemnt is update and rerender by DOM***
+        //here in key we have to pass unique identity ,if we doesn't have unique idebtity like id then use INDEX 
+      }
+
+      {
+        items.map((x, index) => <li key={index}> {x.id} {x.value} </li>)  //like this
+      }
+
+      <button onClick={click}>Add value</button>
 
     </div>
   )
@@ -55,9 +55,9 @@ export default HookPassingArrays
 //     return (
 //        <div>
 //            {/* <ul>
-//                { 
-//                 items.map( (item) => <li key={item.id}> {item.id} {item.value} </li> ) 
-//                }    
+//                {
+//                 items.map( (item) => <li key={item.id}> {item.id} {item.value} </li> )
+//                }
 //            </ul> */}
 //            {
 //                userTypeValue.map( (val) => <h2>{val}</h2>  )
@@ -85,7 +85,7 @@ export default HookPassingArrays
 
 
 
-// // items = [ 
+// // items = [
 // //     {
 // //         id:1,
 // //         value:10
